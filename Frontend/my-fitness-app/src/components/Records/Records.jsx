@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const PersonalRecords = () => {
 //incorporate graph functionality
-    const records = JSON.parse(localStorage.getItem('records'));
+    const records = JSON.parse(localStorage.getItem('User'));
     const [recordsList,setRecordsList] = useState([]);
 
     return (
