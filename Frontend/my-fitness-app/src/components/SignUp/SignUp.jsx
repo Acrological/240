@@ -4,7 +4,15 @@ import { useState } from "react";
 export const SignUp = () => {
 
     const [user,setUser] = useState([]);
-
+    let userInfo = {
+    name = 'Zekhai',
+    weight = 170,
+    bench = 205,
+    squat = 205,
+    deadlift = null,
+    };
+    localStorage.setItem("User",userInfo);
+    
     const saveData = () => {
         localStorage.setItem("User",)
 
