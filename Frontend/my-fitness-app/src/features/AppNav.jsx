@@ -20,7 +20,7 @@ return (
                 <NavLink to="/records">Records</NavLink>
             </NavItem>
             <NavItem>
-                Welcome, {user.name}
+                Welcome, {user?.name}
             </NavItem>
             
         </NavSection>

@@ -12,7 +12,7 @@ export const PersonalRecords = () => {
     Current Body weight: {records?.weight}
     </div>
     <div>
-    Current Bench max: {records?.max}
+    Current Bench max: {records?.bench}
     </div>
     <div>
     Current Squat max: {records?.squat}
