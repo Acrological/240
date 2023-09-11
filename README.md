@@ -1,1 +1,1 @@
-Placeholder until everything is up and running
+Placeholder for setup information about the application
