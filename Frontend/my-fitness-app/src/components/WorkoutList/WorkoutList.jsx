@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ManageWorkout } from "../ManageWorkout/ManageWorkout";
 
 export const WorkoutList = () => {
     const workouts = JSON.parse(localStorage.getItem('workouts'));
@@ -16,21 +17,7 @@ export const WorkoutList = () => {
     return (
         <>
 
-        {workouts != null && WorkoutList.map((workout)=>{
-
-            return (
-                <div>
-                {workout.name}
-                </div>
-
-            );
-
-        })}
-
-        {workouts == null && 
-        <center>
-            <div> No workouts to display 😔, please create some!! 😀</div>
-            </center>}
+        <ManageWorkout/>
         </>
 
     );

@@ -49,7 +49,7 @@ export const ManageExercise = () => {
 
 
     List of current exercises added:
-    <ol class="list-group list-group-numbered">
+    <ol className="list-group list-group-numbered">
       {exercises?.map((exercise,index)=>{
 
         const recentWeight = exercise.history.length - 1;
