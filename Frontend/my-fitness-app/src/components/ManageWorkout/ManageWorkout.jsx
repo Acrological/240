@@ -3,19 +3,27 @@ import { CreateWorkout } from "./CreateWorkout/CreateWorkout";
 
 
 export const ManageWorkout = () => {
-    const workouts = localStorage.getItem("workouts");
+    const workouts = JSON.parse(localStorage.getItem("workouts"));
     const [workoutList,setWorkoutList] = useState([]);
-    const [ showCreateworkout,setShowCreateWorkout] = useState(false);
+    const [ showCreateWorkout,setShowCreateWorkout] = useState(false);
 
+    useEffect(()=>{
+        if(workoutList !== workouts){
+            setWorkoutList(workouts);
+        }
+
+    },[showCreateWorkout])
+
+    
     const renderCreate = () => {
         setShowCreateWorkout(x => !x);
     }
 
     return (
         <>
-        {showCreateworkout && 
+        {showCreateWorkout && 
         <CreateWorkout closeCreate={renderCreate}/>}
-        {!showCreateworkout &&    
+        {!showCreateWorkout &&    
         <>
         <h1>
             Workouts:
@@ -24,7 +32,7 @@ export const ManageWorkout = () => {
             Add
         </span>
         <div>
-            { workoutList?.map((workout,index)=>{
+            { workouts?.map((workout,index)=>{
 
                 return (
                     
