@@ -73,6 +73,9 @@ Add to Workout
 <Button onClick={()=>saveWorkout()}>
 Workout complete
 </Button>
+<Button onClick={()=> closeCreate()}>
+    Cancel
+    </Button> 
 {/* <Button onClick={()=>deleteExercise()}> 
 -
 </Button> */}

@@ -13,7 +13,7 @@ function App() {
     <AppNav />
     <Routes>
     <Route path="/" element={<Landing />} />
-    <Route path="/workouts" element={<Workouts/>} />
+    <Route path="/workouts/*" element={<Workouts/>} />
     <Route path="/records" element={<Records/>} />
     <Route path="/exercises" element={<Exercises/>} />
     </Routes>
