@@ -44,7 +44,7 @@ const updateSelect = (index) => {
 const saveWorkout = () => {
     const completeWorkout = 
     {
-        name: 'workout',
+        name: workoutName.current.value,
         exercises: [...workouts]
     }
     const listOfWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
@@ -56,11 +56,13 @@ const saveWorkout = () => {
 //implement exercise adding feature
 return (
  <>
- <select className="form-select" aria-label="Default select example" ref={exerciseSelected}>
+ <input type="text" placeholder="Workout Name" required ref={workoutName}>
+ </input>
+ <select className="form-select" aria-label="Default select example" ref={exerciseSelected} >
   <option selected="" disabled>Please select an exercise</option>
   {exercises?.map((exercise,index)=>{
     return (
-    <option value={index}>
+    <option key={exercise.name}value={index}>
         {exercise.name}
     </option>
     );
@@ -79,6 +81,7 @@ Workout complete
 {/* <Button onClick={()=>deleteExercise()}> 
 -
 </Button> */}
+
 <div>
     {workouts?.map((exercise,index)=>{
         return (
