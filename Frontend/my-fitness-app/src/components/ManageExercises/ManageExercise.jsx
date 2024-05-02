@@ -43,11 +43,12 @@ export const ManageExercise = () => {
     const updateWorkout = (index,listLength) =>{
         const newList = [...exercises];
         console.log(newList[index].history[listLength].weight);
+
         setShowUpdateBox(x => !x);
         setCurrentIndex(index);
         const date = new Date();
         if(showUpdateBox == true){
-        if(exercises[index].history[listLength].weight = exerciseWeight.current.value){
+        if(exercises[index].history[listLength].weight === exerciseWeight.current.value){
             console.log('same value');
         }
         else if(exerciseWeight.current.value < 0){
@@ -55,11 +56,11 @@ export const ManageExercise = () => {
         } 
         else if (exerciseWeight.current.value > 0 ){
             const newWeight = exerciseWeight.current.value
-            newList.history.push({weightDate : date,
+            newList[index].history.push({weightDate : date,
                 weight : newWeight,})
             localStorage.setItem('exercises',JSON.stringify(newList));
             setUpdateList(x => !x);
-            exerciseWeight.current.reset();
+            
         } else {
                 console.log(exerciseWeight.current.value + ' equates to no value');
         }
