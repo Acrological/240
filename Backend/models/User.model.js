@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const userSchema = new Schema({
-    name:String,
+    fname:String,
     email:{
     type:String,
     unique:true,
@@ -23,6 +23,13 @@ const userSchema = new Schema({
                         weight: Number
                         }
                     ]
+            }
+        ],
+    workouts:
+        [
+            {
+            name:String,
+            exercises:exercises,
             }
         ]
     
