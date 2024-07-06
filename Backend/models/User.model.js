@@ -12,7 +12,7 @@ const userSchema = new Schema({
     bench:Number,
     squat:Number,
     deadlift:Number,
-    exercises:
+    uexercises:
         [
             {
                 name:String,
@@ -29,7 +29,7 @@ const userSchema = new Schema({
         [
             {
             name:String,
-            exercises:exercises,
+            exercises:[uexercises],
             }
         ]
     
