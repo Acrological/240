@@ -12,7 +12,7 @@ const userSchema = new Schema({
     bench:Number,
     squat:Number,
     deadlift:Number,
-    uexercises:
+    exercises:
         [
             {
                 name:String,
@@ -26,12 +26,20 @@ const userSchema = new Schema({
             }
         ],
     workouts:
+    [{name:String,
+        exercises:
         [
             {
-            name:String,
-            exercises:[{uexercises}],
+                name:String,
+                history: 
+                    [
+                        {
+                        weightDate: Date,
+                        weight: Number
+                        }
+                    ]
             }
-        ]
+        ],}]
     
 });
 

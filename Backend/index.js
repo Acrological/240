@@ -10,8 +10,8 @@ app.use(express.json()); // This is middleware that auto parses JSON into JS obj
 app.use(cors()); // Allow all traffic
 app.use(logger); // uses the middleware logger
 
-// const flightRouter = require('./routes/flight.route.js');
-// app.use('/flights',flightRouter);
+const userRouter = require('./routes/user.route')
+app.use('/users',userRouter);
 
 
 app.all('*', (req, res) => {

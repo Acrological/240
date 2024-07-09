@@ -21,3 +21,5 @@ router.put('/',async(req,res) => {
     const updatedUser = await updateUser(req.body);
     res.json(updatedUser)
 })
+
+module.exports = router;
