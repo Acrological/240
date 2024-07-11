@@ -6,7 +6,10 @@ export const Landing = () => {
 const [showModal,setShowModal] = useState(false);
 const [showSignUp,setShowSignUp] = useState(true);
 const userExists = JSON.parse(localStorage.getItem('User'));
-
+// #todo User API CALL
+const getUser = () => {
+    const uData = await fetch ()
+    }
 useEffect(()=>{
     checkUser();
 },[userExists])
