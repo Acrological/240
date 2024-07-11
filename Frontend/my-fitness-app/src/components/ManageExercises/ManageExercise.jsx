@@ -12,6 +12,12 @@ export const ManageExercise = () => {
     const [showUpdateBox,setShowUpdateBox] = useState(false);
     const [currentIndex,setCurrentIndex] = useState();
     const exerciseWeight = useRef();
+    const [showHistory,setShowHistory] = useState(false);
+
+    const openRecords = () => {
+        setShowHistory(x => !x)
+    }
+
     useEffect(()=>{
         if(exerciseList !== exercises){
             setExercises(exerciseList);
@@ -82,7 +88,7 @@ export const ManageExercise = () => {
       {exercises?.map((exercise,index)=>{
 
         const recentWeight = exercise.history.length - 1;
-
+        const exerciseHistory = [...exercise.history];
             return (
               <> 
                <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -90,9 +96,20 @@ export const ManageExercise = () => {
                   <div class="fw-bold">{exercise.name}</div>
                   Current Working Weight/Max: {exercise.history[recentWeight].weight}
                  {currentIndex == index && showUpdateBox && <input type="text" ref={exerciseWeight} placeholder="Input New Weight"/> }
+                 {showHistory && exerciseHistory.map((e)=>{
+
+                    return(
+                        <>
+                        <div>
+                            {e.weightDate} : {e.weight}
+                        </div>
+                        </>
+                    );
+                 })}
                 </div>
                 <Button className="btn btn-danger" onClick={() => deleteExercise(index)}>Remove</Button>
                 <Button className="btn btn-success" onClick={() => updateWorkout(index,recentWeight)}>Update</Button>
+                <Button className="btn tbn-success"onClick={() => openRecords()}>History</Button>
               </li>
              
      </>
