@@ -4,7 +4,7 @@ import Button from "react-bootstrap/esm/Button";
 
 
 export const ManageExercise = () => {
-
+    // TODO: Refactor each exercise into a seperate component so the state can be individualized for button clicks/ save data
     const exerciseList = JSON.parse(localStorage.getItem('exercises'));
     const [exercises,setExercises] = useState([]);
     const [showCreateExercise,setShowCreateExercise] = useState(false);
