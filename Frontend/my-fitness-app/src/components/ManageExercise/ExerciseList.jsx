@@ -47,8 +47,13 @@ export const ExerciseList = () => {
 
     <ol className="list-group list-group-numbered">
       {exercises?.map((exercise)=>{
-        <Exercise exercise={exercise}/>
+        console.log(exercise)
+        return (
+        <Exercise exercise={exercise}/> );
         })}
+
+       
+
 
 
     </ol>
