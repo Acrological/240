@@ -1,9 +1,9 @@
-import { ManageExercise } from "../components/ManageExercises/ManageExercise";
+import { ExerciseList } from "../components/ManageExercise/ExerciseList";
 
 export const Exercises = () => {
 
 
     return (
-        <ManageExercise/>
+        <ExerciseList/>
     );
 }
