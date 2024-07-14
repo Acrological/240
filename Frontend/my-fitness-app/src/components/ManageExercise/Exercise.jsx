@@ -1,7 +1,7 @@
 import { useEffect, useState,useRef} from "react";
 import Button from "react-bootstrap/esm/Button";
 
-export const Exercise = (exercise) => {
+export const Exercise = ({exercise}) => {
     // console.log('prop' + exercise)
     // const recentWeight = exercise.history.length - 1;
     // const exerciseHistory = [...exercise.history];
