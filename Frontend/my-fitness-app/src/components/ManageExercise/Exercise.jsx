@@ -3,8 +3,8 @@ import Button from "react-bootstrap/esm/Button";
 
 export const Exercise = ({exercise}) => {
     // console.log('prop' + exercise)
-    // const recentWeight = exercise.history.length - 1;
-    // const exerciseHistory = [...exercise.history];
+    const recentWeight = exercise.history.length - 1;
+    const exerciseHistory = [...exercise.history].reverse();
     const [showUpdateBox,setShowUpdateBox] = useState(false);
     const [current,setCurrent] = useState();
     const exerciseWeight = useRef();
@@ -24,9 +24,9 @@ export const Exercise = ({exercise}) => {
   }
 
 // TODO: Refactor to adjust only this components data from the prop
-    const updateWorkout = (listLength) =>{
-    //   const newList = [...exercises];
-    //   console.log(newList[].history[listLength].weight);
+    const updateWorkout = () =>{
+      const newList = [...exercise];
+      console.log(newList.history);
 
     //   setShowUpdateBox(x => !x);
     //   setCurrent();
@@ -57,9 +57,9 @@ export const Exercise = ({exercise}) => {
            <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto" key={exercise.name}>
               <div class="fw-bold">{exercise.name}</div>
-              {/* Current Working Weight/Max: {exercise.history[recentWeight].weight} */}
+              Current Working Weight/Max: {exercise.history[recentWeight].weight}
              { showUpdateBox && <input type="text" ref={exerciseWeight} placeholder="Input New Weight"/> }
-             {/* {showHistory && exerciseHistory.map((e)=>{
+             {showHistory && exerciseHistory.map((e)=>{
 
                 return(
                     <>
@@ -68,11 +68,11 @@ export const Exercise = ({exercise}) => {
                     </div>
                     </>
                 );
-             })} */}
+             })}
             </div>
             <Button className="btn btn-danger" onClick={() => deleteExercise()}>Remove</Button>
-            <Button className="btn btn-success" onClick={() => updateWorkout()}>Update</Button>
-            <Button className="btn tbn-success"onClick={() => openRecords()}>History</Button>
+            <Button className="btn btn-success" onClick={() => updateWorkout()} >Update</Button>
+            <Button className="btn tbn-success"onClick={() => openRecords()} disabled={exerciseHistory.length <= 1}>History</Button>
           </li>
              </>
             );

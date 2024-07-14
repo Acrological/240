@@ -49,7 +49,7 @@ export const ExerciseList = () => {
       {exercises?.map((exercise)=>{
         console.log(exercise)
         return (
-        <Exercise exercise={exercise}/> );
+        <Exercise exercise={exercise} /> );
         })}
 
        
