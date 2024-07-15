@@ -1,7 +1,7 @@
 import { useEffect, useState,useRef} from "react";
 import Button from "react-bootstrap/esm/Button";
 
-export const Exercise = ({exercise}) => {
+export const Exercise = ({exercise,updateExercise}) => {
     // console.log('prop' + exercise)
     const recentWeight = exercise.history.length - 1;
     const exerciseHistory = [...exercise.history].reverse();
@@ -58,7 +58,7 @@ export const Exercise = ({exercise}) => {
             <div class="ms-2 me-auto" key={exercise.name}>
               <div class="fw-bold">{exercise.name}</div>
               Current Working Weight/Max: {exercise.history[recentWeight].weight}
-             { showUpdateBox && <input type="text" ref={exerciseWeight} placeholder="Input New Weight"/> }
+             { showUpdateBox && <input type="text" ref={exerciseWeight} placeholder="Input New Weight" error={!(exerciseWeight.current.value >= 0)}/> }
              {showHistory && exerciseHistory.map((e)=>{
 
                 return(
