@@ -1,4 +1,4 @@
-import { useEffect, useState,useRef} from "react";
+import {useState,useRef} from "react";
 import Button from "react-bootstrap/esm/Button";
 
 export const Exercise = ({exercise,updateExercise,index}) => {
@@ -7,37 +7,27 @@ export const Exercise = ({exercise,updateExercise,index}) => {
     const exercises = JSON.parse(localStorage.getItem('exercises'));
     const exerciseHistory = [...exercise.history].reverse();
     const [showUpdateBox,setShowUpdateBox] = useState(false);
-    const [current,setCurrent] = useState();
     const exerciseWeight = useRef();
     const [showHistory,setShowHistory] = useState(false);
 
     const openRecords = () => {
         setShowHistory(x => !x)
     }
-    //TODO: Adjust and make method call act in parent component
     const deleteExercise = () => {
-    //   const newList = [...exercises]
-    //   console.log(newList[])
-    //   newList.splice(,1);
-    //   console.log(newList);
-    //   localStorage.setItem('exercises',JSON.stringify(newList));
-    //   setUpdateList(x => !x);
+      const newList = [...exercises]
+      newList.splice(index,1);
+      localStorage.setItem('exercises',JSON.stringify(newList));
+    updateExercise();
   }
 
-// TODO: Refactor to adjust only this components data from the prop
     const updateWorkout = () =>{
       let newList = [...exercises]
-      console.log(exercise.history);
-      let listLength = exercise.history.length;
-      console.log(listLength)
-      setCurrent();
       const date = new Date();
           const newWeight = exerciseWeight.current.value
           exercise.history.push({weightDate : date,
               weight : newWeight,})
           newList[index] = exercise
           localStorage.setItem('exercises',JSON.stringify(newList));
-        //   setUpdateList(x => !x);
         updateExercise();
           
       }
