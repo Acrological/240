@@ -65,10 +65,11 @@ export const ManageWorkout = () => {
                         <div>
                             <ul>
                         {showWorkout && workout.exercises.map((exercise,index) => {
+                            const currentWeight = exercise.history.length - 1
                         return (
                             <li>
                             <div>
-                                {exercise.name}
+                                {exercise.name} : {exercise.history[currentWeight].weight}lbs
                             </div>
                              </li>
                         )
