@@ -33,7 +33,7 @@ const userSchema = new Schema({
     workouts:
     [{name:String,
         exercises:
-        [exercise._id],}]
+        [exercise],}]
     
 });
 
