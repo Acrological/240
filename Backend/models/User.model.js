@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const exercise = new Schema(
+            {
+                name:String,
+                history: 
+                    [
+                        {
+                        _id: false ,
+                        weightDate: Date,
+                        weight: Number,
+                        }
+                    ],
+                
+                    _id:Number,
+            }
+
+)
 
 const userSchema = new Schema({
     fname:String,
@@ -13,33 +29,11 @@ const userSchema = new Schema({
     squat:Number,
     deadlift:Number,
     exercises:
-        [
-            {
-                name:String,
-                history: 
-                    [
-                        {
-                        weightDate: Date,
-                        weight: Number
-                        }
-                    ]
-            }
-        ],
+        [exercise],
     workouts:
     [{name:String,
         exercises:
-        [
-            {
-                name:String,
-                history: 
-                    [
-                        {
-                        weightDate: Date,
-                        weight: Number
-                        }
-                    ]
-            }
-        ],}]
+        [exercise._id],}]
     
 });
 
