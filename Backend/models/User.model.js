@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const exercise = new Schema(
-            {
+            {   _id:Number,
                 name:String,
                 history: 
                     [
@@ -12,8 +12,7 @@ const exercise = new Schema(
                         weight: Number,
                         }
                     ],
-                
-                    _id:Number,
+                    
             }
 
 )
