@@ -3,26 +3,26 @@ import { useState } from "react";
 
 export const SignUp = () => {
 
-    const [user,setUser] = useState([]);
-    let userInfo = {
-    name :'Zekhai',
-    weight : 170,
-    bench : 205,
-    squat : 205,
-    deadlift : 10,
-    };
-    console.log(userInfo);
-    localStorage.setItem('User',JSON.stringify(userInfo));
+    // const [user,setUser] = useState([]);
+    // let userInfo = {
+    // name :'Zekhai',
+    // weight : 170,
+    // bench : 205,
+    // squat : 205,
+    // deadlift : 10,
+    // };
+    // console.log(userInfo);
+    // localStorage.setItem('User',JSON.stringify(userInfo));
     
-    const saveData = () => {
-        localStorage.setItem("User",)
+    // const saveData = () => {
+    //     localStorage.setItem("User",)
 
-    }
+    // }
 
     return (
         <>
         signed up complete
-        {/* <form>
+        <form>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" id="name" />
@@ -36,7 +36,7 @@ export const SignUp = () => {
     <input type="email" class="form-control" id="benchmax" />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-</form> */}
+</form>
  </>
     );
 }
