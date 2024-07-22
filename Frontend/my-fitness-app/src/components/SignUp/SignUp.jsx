@@ -3,6 +3,15 @@ import { useState } from "react";
 
 export const SignUp = () => {
 
+    const email = useRef()
+    const name = useRef()
+    const bench = useRef()
+    const deadlift = useRef()
+    const squat = useRef()
+    const bodyWeight = useRef()
+    const password = useRef()
+    const cpwassword = useRef()
+
     // const [user,setUser] = useState([]);
     // let userInfo = {
     // name :'Zekhai',
@@ -25,15 +34,35 @@ export const SignUp = () => {
         <form>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" />
+    <input type="text" class="form-control" ref="name" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" class="form-control" ref="email" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Password</label>
+    <input type="text" class="form-control" ref="password" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
+    <input type="text" class="form-control" ref="cpassword" />
   </div>
   <div class="mb-3">
     <label for="weightinput" class="form-label">Weight</label>
-    <input type="number" class="form-control" id="weightinput" />
+    <input type="number" class="form-control" ref="bodyWeight" />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Bench Max</label>
-    <input type="email" class="form-control" id="benchmax" />
+    <input type="number" class="form-control" ref="bench" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Squat Max</label>
+    <input type="number" class="form-control" ref="squat" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Deadlift Max</label>
+    <input type="number" class="form-control" ref="deadlift" />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
