@@ -10,15 +10,15 @@ const userExists = JSON.parse(localStorage.getItem('User'));
 // const getUser = () => {
 //     const uData = await fetch ()
 //     }
-useEffect(()=>{
-    checkUser();
-},[userExists])
+// useEffect(()=>{
+//     checkUser();
+// },[userExists])
 
-const checkUser = () => {
-    if(userExists != null){
-        setShowSignUp(false)
-    }
-}
+// const checkUser = () => {
+//     if(userExists != null){
+//         setShowSignUp(false)
+//     }
+// }
 const showSignUpInfo = () => {
     console.log('button clicked');
     setShowModal(true);

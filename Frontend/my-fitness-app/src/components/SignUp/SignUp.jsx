@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 
 export const SignUp = () => {
@@ -10,7 +10,7 @@ export const SignUp = () => {
     const squat = useRef()
     const bodyWeight = useRef()
     const password = useRef()
-    const cpwassword = useRef()
+    const cpassword = useRef()
 
     // const [user,setUser] = useState([]);
     // let userInfo = {
@@ -28,43 +28,62 @@ export const SignUp = () => {
 
     // }
 
+    const submitForm = () => {
+
+      if(cpassword.current.value === password.current.value){
+        let User = {
+          name:name.current.value,
+          email:email.current.value,
+          password:password.current.value,
+          weight:bodyWeight.current.value,
+          bench:bench.current.value,
+          squat:squat.current.value,
+          deadlift:deadlift.current.value,
+        }
+        console.log(User);
+      } else {
+        alert('passwords do not match');
+      }
+
+
+    }
     return (
         <>
         signed up complete
         <form>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" ref="name" />
+    <input type="text" class="form-control" ref={name} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" ref="email" />
+    <input type="email" class="form-control" ref={email} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Password</label>
-    <input type="text" class="form-control" ref="password" />
+    <input type="text" class="form-control" ref={password} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
-    <input type="text" class="form-control" ref="cpassword" />
+    <input type="text" class="form-control" ref={cpassword} />
   </div>
   <div class="mb-3">
     <label for="weightinput" class="form-label">Weight</label>
-    <input type="number" class="form-control" ref="bodyWeight" />
+    <input type="number" class="form-control" ref={bodyWeight} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Bench Max</label>
-    <input type="number" class="form-control" ref="bench" />
+    <input type="number" class="form-control" ref={bench} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Squat Max</label>
-    <input type="number" class="form-control" ref="squat" />
+    <input type="number" class="form-control" ref={squat} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Deadlift Max</label>
-    <input type="number" class="form-control" ref="deadlift" />
+    <input type="number" class="form-control" ref={deadlift} />
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" onClick={()=>submitForm()}>Submit</button>
 </form>
  </>
     );
