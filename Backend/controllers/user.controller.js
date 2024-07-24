@@ -51,8 +51,8 @@ const loginUser = async(logEmail,logPassword) => {
     try {
         const query = User.where({email: logEmail, password: logPassword})
         const existingUser = await query.findOne()
-        if(existingUser == null){
-            throw `User not found`
+        if(existingUser != null){
+            delete existingUser.password;
         }
         return existingUser;
     } catch (err){
