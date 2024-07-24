@@ -23,6 +23,7 @@ const userSchema = new Schema({
     type:String,
     unique:true,
     },
+    password:String,
     weight:Number,
     bench:Number,
     squat:Number,

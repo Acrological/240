@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const {createUser,getAllUsers,getUser,updateUser} = require('../controllers/user.controller');
+const {createUser,getAllUsers,getUser,updateUser, loginUser} = require('../controllers/user.controller');
 
 router.get('/', async (req,res) => {
     const users = await getAllUsers();
@@ -20,6 +20,10 @@ router.post('/', async (req,res) => {
 router.put('/',async(req,res) => {
     const updatedUser = await updateUser(req.body);
     res.json(updatedUser)
+})
+router.post('/login',async(req,res) => {
+    const user = await loginUser(req.body);
+    res.json(user);
 })
 
 module.exports = router;

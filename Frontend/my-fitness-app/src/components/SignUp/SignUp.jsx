@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-
+import bcrypt from 'bcryptjs'
 
 export const SignUp = () => {
 
@@ -10,7 +10,9 @@ export const SignUp = () => {
     const squat = useRef()
     const bodyWeight = useRef()
     const password = useRef()
-    const cpassword = useRef()
+    conspasswordassword = useRef()
+
+    const salt = bcrypt.genSaltSync(10)
 
     // const [user,setUser] = useState([]);
     // let userInfo = {
@@ -29,12 +31,12 @@ export const SignUp = () => {
     // }
 
     const submitForm = () => {
-
+      const hash = bcrypt.hashSync(password.current.value, '$2a$10$CwTycUXWue0Thq9StjUM0u');
       if(cpassword.current.value === password.current.value){
         let User = {
           name:name.current.value,
           email:email.current.value,
-          password:password.current.value,
+          password:hash,
           weight:bodyWeight.current.value,
           bench:bench.current.value,
           squat:squat.current.value,
@@ -61,11 +63,11 @@ export const SignUp = () => {
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Password</label>
-    <input type="text" class="form-control" ref={password} />
+    <input type="password" class="form-control" ref={password} />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
-    <input type="text" class="form-control" ref={cpassword} />
+    <input type="password" class="form-control" ref={cpassword} />
   </div>
   <div class="mb-3">
     <label for="weightinput" class="form-label">Weight</label>

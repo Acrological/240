@@ -1,10 +1,11 @@
 const User = require('../models/User.model')
 
-const createUser = async ({fname,email,weight,bench,squat,deadlift,exercises,workouts}) => {
+const createUser = async ({fname,password,email,weight,bench,squat,deadlift,exercises,workouts}) => {
 
     try {
         const user = new User({
         fname,
+        password,
         email,
         weight,
         bench,
@@ -46,4 +47,17 @@ const updateUser = async(id,updatedUser) => {
 }
 }
 
-module.exports = {createUser,getAllUsers,getUser,updateUser}
+const loginUser = async(logEmail,logPassword) => {
+    try {
+        const query = User.where({email: logEmail, password: logPassword})
+        const existingUser = await query.findOne()
+        if(existingUser == null){
+            throw `User not found`
+        }
+        return existingUser;
+    } catch (err){
+        console.error(err);
+         throw { status: 404, message: err };
+}
+}
+module.exports = {createUser,getAllUsers,getUser,updateUser,loginUser}
