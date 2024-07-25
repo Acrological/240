@@ -46,8 +46,6 @@ export const SignUp = () => {
       } else {
         alert('passwords do not match');
       }
-
-
     }
     return (
         <>
