@@ -1,5 +1,7 @@
 const User = require('../models/User.model')
 
+//TODO:JWT Functionality implementation for refresh after login and verifying
+
 const createUser = async ({fname,password,email,weight,bench,squat,deadlift,exercises,workouts}) => {
 
     try {
