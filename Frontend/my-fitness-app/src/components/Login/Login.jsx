@@ -29,10 +29,6 @@ export const Login = () => {
       <button type="submit" class="btn btn-primary" onClick={()=>submitForm()}>Submit</button>
       </form>
         </>
-
-     
-
-
     );
 
 

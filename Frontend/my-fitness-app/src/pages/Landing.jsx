@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SignUp } from '../components/SignUp/SignUp';
+import { Login } from '../components/Login/Login';
 export const Landing = () => {
 const [showModal,setShowModal] = useState(false);
 const [showSignUp,setShowSignUp] = useState(true);
@@ -31,10 +32,13 @@ const showSignUpInfo = () => {
                 hi, this is the starting page
                 </div>
                 { showSignUp && 
+                    <>
                     <Button type="button" class="btn btn-primary" onClick={()=>{showSignUpInfo()}}>
                             Get Started
                      </Button>
-                }
+                     <Login/>
+                     </>
+                    }
              {showModal && 
                     <SignUp/>
                     }
