@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const {createUser,getAllUsers,getUser,updateUser, loginUser} = require('../controllers/user.controller');
+const {signupUser,getAllUsers,getUser,updateUser, loginUser} = require('../controllers/user.controller');
 
 router.get('/', async (req,res) => {
     const users = await getAllUsers();
@@ -13,7 +13,7 @@ router.get('/:id', async (req,res) => {
 });
 
 router.post('/', async (req,res) => {
-    const newUser = await createUser(req.body);
+    const newUser = await signupUser(req.body);
     res.json(newUser);
 });
 

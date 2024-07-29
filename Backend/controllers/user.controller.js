@@ -2,7 +2,7 @@ const User = require('../models/User.model')
 
 //TODO:JWT Functionality implementation for refresh after login and verifying
 
-const createUser = async ({fname,password,email,weight,bench,squat,deadlift,exercises,workouts}) => {
+const signupUser = async ({fname,password,email,weight,bench,squat,deadlift,exercises,workouts}) => {
 
     try {
         const user = new User({
@@ -62,4 +62,4 @@ const loginUser = async(logEmail,logPassword) => {
          throw { status: 404, message: err };
 }
 }
-module.exports = {createUser,getAllUsers,getUser,updateUser,loginUser}
+module.exports = {signupUser,getAllUsers,getUser,updateUser,loginUser}
