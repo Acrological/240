@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
 const router = require('express').Router();
 
 const {signupUser,getAllUsers,getUser,updateUser, loginUser} = require('../controllers/user.controller');
@@ -23,7 +25,14 @@ router.put('/',async(req,res) => {
 })
 router.post('/login',async(req,res) => {
     const user = await loginUser(req.body);
-    res.json(user);
+    let jwtSecretKey = process.env.JWT_SECRET_KEY;
+    let data = {
+        time: Date(),
+        userId: 12,
+    }
+
+    const token = jwt.sign(data, jwtSecretKey);
+    res.json(user,token);
 })
 
 // Verification of JWT
@@ -54,14 +63,6 @@ router.post("/user/generateToken", (req, res) => {
     // Validate User Here
     // Then generate JWT Token
 
-    let jwtSecretKey = process.env.JWT_SECRET_KEY;
-    let data = {
-        time: Date(),
-        userId: 12,
-    }
-
-    const token = jwt.sign(data, jwtSecretKey);
-
-    res.send(token);
+    
 });
 module.exports = router;

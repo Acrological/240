@@ -1,5 +1,3 @@
-const dotenv = require('dotenv');
-const jwt = require('jsonwebtoken');
 const User = require('../models/User.model')
 
 //TODO:JWT Functionality implementation for refresh after login and verifying
