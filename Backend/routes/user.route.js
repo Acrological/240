@@ -59,10 +59,4 @@ router.get("/user/validateToken", (req, res) => {
     }
 });
 
-router.post("/user/generateToken", (req, res) => {
-    // Validate User Here
-    // Then generate JWT Token
-
-    
-});
 module.exports = router;
