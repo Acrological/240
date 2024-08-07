@@ -23,6 +23,8 @@ router.put('/',async(req,res) => {
     const updatedUser = await updateUser(req.body);
     res.json(updatedUser)
 })
+
+//Login verification and returning JWT Token with User data
 router.post('/login',async(req,res) => {
     const user = await loginUser(req.body);
     let jwtSecretKey = process.env.JWT_SECRET_KEY;
