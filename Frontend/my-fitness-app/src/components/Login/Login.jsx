@@ -5,7 +5,7 @@ export const Login = () => {
 
     const password = useRef();
     const email = useRef();
-    const loginUser = () => {
+    const submitForm = () => {
         const hash = bcrypt.hashSync(password.current.value, '$2a$10$CwTycUXWue0Thq9StjUM0u');
         let User = {
             email:email.current.value,
