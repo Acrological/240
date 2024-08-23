@@ -2,7 +2,6 @@ import {useState,useRef} from "react";
 import Button from "react-bootstrap/esm/Button";
 
 export const Exercise = ({exercise,updateExercise,index}) => {
-    // console.log('prop' + exercise)
     const recentWeight = exercise.history.length - 1;
     const exercises = JSON.parse(localStorage.getItem('exercises'));
     const exerciseHistory = [...exercise.history].reverse();

@@ -42,7 +42,6 @@ export const SignUp = () => {
           squat:squat.current.value,
           deadlift:deadlift.current.value,
         }
-        console.log(User);
       } else {
         alert('passwords do not match');
       }

@@ -46,7 +46,6 @@ export const ExerciseList = () => {
 
     <ol className="list-group list-group-numbered">
       {exercises?.map((exercise,index)=>{
-        console.log(exercise)
         return (
         <Exercise exercise={exercise} updateExercise={updateListProp} index={index}/> );
         })}

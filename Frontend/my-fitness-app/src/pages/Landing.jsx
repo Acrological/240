@@ -21,7 +21,6 @@ const userExists = JSON.parse(localStorage.getItem('User'));
 //     }
 // }
 const showSignUpInfo = () => {
-    console.log('button clicked');
     setShowModal(true);
 }
 

@@ -10,7 +10,6 @@ const workoutName = useRef();
 
 useEffect(()=>{
     if(exercisesStored !== exercises){
-        console.log(exercisesStored);
             setExercises(exercisesStored)
     }
 

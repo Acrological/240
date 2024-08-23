@@ -11,7 +11,6 @@ export const Login = () => {
             email:email.current.value,
             password:hash,
         }
-        console.log(User);
     }
 
     return (
