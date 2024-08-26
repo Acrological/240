@@ -13,7 +13,7 @@ export const SignUp = () => {
     conspasswordassword = useRef()
 
     const salt = bcrypt.genSaltSync(10)
-
+    //localStorage mockdata for app use
     // const [user,setUser] = useState([]);
     // let userInfo = {
     // name :'Zekhai',
